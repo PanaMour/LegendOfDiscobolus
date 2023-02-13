@@ -11,6 +11,8 @@ public class PeasantManController : MonoBehaviour
     private bool walking;
     private Vector3 startPos;
     public float dis = 5f;
+    public Transform playerTransform;
+    private Vector3 stopPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,14 +20,18 @@ public class PeasantManController : MonoBehaviour
         rigidbody= GetComponent<Rigidbody>();
         walking = true;
         startPos = transform.position;
-
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        walking = this.gameObject.GetComponent<NPCInteraction>().isStopping;
         if (walking)
         {
+            /*if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Walking"))
+            {
+                transform.position = stopPosition;
+            }*/
             animator.Play("Walking");
             transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.forward, Time.deltaTime * 1f);
 
@@ -37,6 +43,8 @@ public class PeasantManController : MonoBehaviour
         }
         else
         {
+            //stopPosition = transform.position;
+            transform.LookAt(playerTransform);
             animator.Play("Arguing");
         }
     }

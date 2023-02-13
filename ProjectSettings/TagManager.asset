@@ -8,6 +8,7 @@ TagManager:
   - CinemachineTarget
   - lb_perchTarget
   - Interactable
+  - NPC
   layers:
   - Default
   - TransparentFX
