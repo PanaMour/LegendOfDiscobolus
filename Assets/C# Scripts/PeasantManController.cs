@@ -33,16 +33,20 @@ public class PeasantManController : MonoBehaviour
                 transform.position = stopPosition;
             }*/
             animator.Play("Walking");
-            transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.forward, Time.deltaTime * 1f);
+            this.gameObject.GetComponent<PlayerNavMesh>().enabled = true;
+            this.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+            /*transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.forward, Time.deltaTime * 1f);
 
             if (Vector3.Distance(transform.position, startPos) >= dis)
             {
                 transform.rotation = Quaternion.Euler(0f, 90f, 0f) * transform.rotation;
                 startPos = transform.position;
-            }
+            }*/
         }
         else
         {
+            this.gameObject.GetComponent<PlayerNavMesh>().enabled = false;
+            this.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
             //stopPosition = transform.position;
             transform.LookAt(playerTransform);
             animator.Play("Arguing");
