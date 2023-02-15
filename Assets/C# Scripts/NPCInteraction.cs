@@ -12,9 +12,14 @@ public class NPCInteraction : MonoBehaviour
     public float height = 50;
     private Camera mainCamera;
     public bool isStopping = true;
+    public GameObject npc;
+    public int timeofDialogue = 5;
+
     void Start()
     {
         mainCamera = Camera.main;
+        npc = this.gameObject;
+        //dialogueText = this.gameObject.GetComponent<NPCInteraction>().dialogueText;
     }
     private void OnGUI()
     {
@@ -27,10 +32,10 @@ public class NPCInteraction : MonoBehaviour
             GUIStyle dialogueStyle = new GUIStyle(GUI.skin.box);
             dialogueStyle.normal.textColor = Color.white;
             dialogueStyle.fontStyle = FontStyle.Bold;
-            string npcName = this.gameObject.name;
+            string npcName = npc.name;
             GUILayout.BeginArea(dialogueBox);
-            GUI.Label(new Rect(20, 8, 1100, 50), npcName,boldtext);
-            GUI.Box(new Rect(0, 0, 1100, 50), dialogueText, dialogueStyle);
+            GUI.Label(new Rect(20, 8, 1100, 50), npcName, boldtext);
+            GUI.Box(new Rect(0, 0, 1100, 50), dialogueText.Replace("\\n", "\n"), dialogueStyle);
             GUILayout.EndArea();
         }
     }
@@ -43,7 +48,7 @@ public class NPCInteraction : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.CompareTag("NPC"))
+                if (hit.collider.gameObject == npc)
                 {
                     showDialogue = true;
                     if (isStopping)
@@ -58,7 +63,7 @@ public class NPCInteraction : MonoBehaviour
 
     IEnumerator StopShowing()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(timeofDialogue);
         showDialogue = false;
         isStopping = true;
     }
