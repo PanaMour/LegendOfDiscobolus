@@ -30793,7 +30793,7 @@ MonoBehaviour:
   height: 50
   isStopping: 1
   npc: {fileID: 0}
-  timeofDialogue: 10
+  timeofDialogue: 5
 --- !u!65 &805235692
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63119,7 +63119,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f5d8e9b617caed2409f6c98944d23490,
         type: 3}
       propertyPath: m_Name
-      value: Duke Ellington
+      value: Baron von Hohenberg
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: f5d8e9b617caed2409f6c98944d23490,
         type: 3}

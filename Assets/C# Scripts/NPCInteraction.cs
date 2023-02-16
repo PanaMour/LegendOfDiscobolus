@@ -28,7 +28,6 @@ public class NPCInteraction : MonoBehaviour
             height = 70;
             width = Screen.width-2*x;
             y = Screen.height - height-10;
-            Debug.Log(Screen.width + "JOEJOEJEOJEOEJOEJO" + Screen.height);
             Rect dialogueBox = new Rect(x, y, width, height);
             var boldtext = new GUIStyle(GUI.skin.label);
             boldtext.fontStyle = FontStyle.Bold;
