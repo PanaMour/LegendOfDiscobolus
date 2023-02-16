@@ -24,6 +24,11 @@ public class NPCInteraction : MonoBehaviour
     {
         if (showDialogue)
         {
+            x = 25;
+            height = 70;
+            width = Screen.width-2*x;
+            y = Screen.height - height-10;
+            Debug.Log(Screen.width + "JOEJOEJEOJEOEJOEJO" + Screen.height);
             Rect dialogueBox = new Rect(x, y, width, height);
             var boldtext = new GUIStyle(GUI.skin.label);
             boldtext.fontStyle = FontStyle.Bold;
@@ -33,8 +38,8 @@ public class NPCInteraction : MonoBehaviour
             dialogueStyle.fontStyle = FontStyle.Bold;
             string npcName = npc.name;
             GUILayout.BeginArea(dialogueBox);
-            GUI.Label(new Rect(20, 8, 1100, 50), npcName, boldtext);
-            GUI.Box(new Rect(0, 0, 1100, 50), dialogueText.Replace("\\n", "\n"), dialogueStyle);
+            GUI.Label(new Rect(20, 17, width, height), npcName, boldtext);
+            GUI.Box(new Rect(0, 0, width, height), dialogueText.Replace("\\n", "\n"), dialogueStyle);
             GUILayout.EndArea();
         }
     }
