@@ -19,7 +19,6 @@ public class NPCInteraction : MonoBehaviour
     {
         mainCamera = Camera.main;
         npc = this.gameObject;
-        //dialogueText = this.gameObject.GetComponent<NPCInteraction>().dialogueText;
     }
     private void OnGUI()
     {
@@ -57,6 +56,8 @@ public class NPCInteraction : MonoBehaviour
                         StartCoroutine(StopShowing());
                     }
                 }
+                else
+                    showDialogue= false;
             }
         }
     }
