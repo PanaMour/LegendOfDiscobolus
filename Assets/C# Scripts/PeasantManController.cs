@@ -35,7 +35,7 @@ public class PeasantManController : MonoBehaviour
         {
             this.gameObject.GetComponent<PlayerNavMesh>().enabled = false;
             this.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-            transform.LookAt(playerTransform);
+            transform.LookAt(new Vector3(playerTransform.position.x, this.gameObject.transform.position.y, playerTransform.position.z));
             animator.Play("Arguing");
         }
     }
