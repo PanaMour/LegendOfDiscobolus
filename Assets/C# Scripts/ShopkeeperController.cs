@@ -12,13 +12,19 @@ public class ShopkeeperController : MonoBehaviour
     public float dis = 5f;
     public Transform playerTransform;
     private Quaternion rotation;
+    public GameObject oldman;
+    public GameObject battleaxe;
+    public GameObject wallaxe;
+    private Camera mainCamera;
     // Start is called before the first frame update
     void Start()
     {
+        mainCamera = Camera.main;
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
         rotation = transform.rotation;
         idle = true;
+        oldman = this.gameObject;
     }
 
     // Update is called once per frame
@@ -34,6 +40,27 @@ public class ShopkeeperController : MonoBehaviour
         {
             transform.LookAt(new Vector3(playerTransform.position.x, this.gameObject.transform.position.y, playerTransform.position.z));
             animator.Play("Scratch");
+        }
+        Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+        if (oldman.GetComponent<NPCInteraction>().showDialogue) {
+            if(oldman.GetComponent<NPCInteraction>().dialogue2 == true && battleaxe.activeSelf == false)
+            {
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.collider.gameObject == oldman)
+                    {
+                        battleaxe.SetActive(true);
+                        wallaxe.SetActive(false);
+                        playerTransform.GetComponent<PlayerInventory>().NumberOfTomatoes = playerTransform.GetComponent<PlayerInventory>().NumberOfTomatoes - 6;
+                        playerTransform.GetComponent<PlayerInventory>().TomatoCollected();
+                    }
+                }
+            }
+            else if(battleaxe.activeSelf)
+            {
+                oldman.GetComponent<NPCInteraction>().dialogue3 = true;
+            }
         }
     }
 }

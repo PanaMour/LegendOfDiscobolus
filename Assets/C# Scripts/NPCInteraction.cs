@@ -1,11 +1,13 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class NPCInteraction : MonoBehaviour
 {
+    public List<string> dialogueOptions = new List<string>();
     public string dialogueText = "";
-    private bool showDialogue = false;
+    public bool showDialogue = false;
     public float x = Screen.width / 2 - 100;
     public float y = Screen.height / 2 - 50;
     public float width = 100;
@@ -14,6 +16,8 @@ public class NPCInteraction : MonoBehaviour
     public bool isStopping = true;
     public GameObject npc;
     public int timeofDialogue = 5;
+    public bool dialogue2 = false;
+    public bool dialogue3 = false;
 
     void Start()
     {
@@ -54,6 +58,22 @@ public class NPCInteraction : MonoBehaviour
                 if (hit.collider.gameObject == npc)
                 {
                     showDialogue = true;
+                    if (dialogueOptions != null && dialogueOptions.Count != 0)
+                    {
+                        if (dialogue3)
+                        {
+                            dialogueText = dialogueOptions[2];
+                        }
+                        else if (dialogue2)
+                        {
+                            dialogueText = dialogueOptions[1];
+                        }
+                        else
+                        {
+                            dialogueText = dialogueOptions[0];
+                        }
+                    }
+                    
                     if (isStopping)
                     {
                         isStopping = false;

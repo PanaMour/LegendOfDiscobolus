@@ -6,10 +6,11 @@ using UnityEngine.Events;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public int NumberOfTomatoes { get; private set; }
+    public int NumberOfTomatoes;
     public UnityEvent<PlayerInventory> OnTomatoCollected;
     public Canvas canvas;
     private bool invisible = true;
+    public GameObject oldman;
 
     public void TomatoCollected()
     {
@@ -17,6 +18,10 @@ public class PlayerInventory : MonoBehaviour
         NumberOfTomatoes++;
         OnTomatoCollected.Invoke(this);
         StartCoroutine(InvisibleCanvas());
+        if (NumberOfTomatoes >= 5)
+        {
+            oldman.gameObject.GetComponent<NPCInteraction>().dialogue2= true;
+        }
     }
     public void Update()
     {
