@@ -25,7 +25,7 @@ public class EnemyHealth : Health
         UpdateUI();
 
         //hit animation
-        //animator.SetTrigger("Hit");
+        animator.SetTrigger("Hit");
     }
 
     void UpdateUI()
@@ -44,7 +44,7 @@ public class EnemyHealth : Health
 
         myParentSpawner.NotifyDeath(this);
 
-        //animator.SetTrigger("Death");
+        animator.SetTrigger("Death");
 
         DropLoot();
 

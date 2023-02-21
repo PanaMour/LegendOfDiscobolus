@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         target = player.transform;
 
         running = target != null;
-        //animator.SetBool("Running", running);
+        animator.SetBool("Running", running);
     }
 
     public void LostPlayer(GameObject player)
@@ -45,11 +45,11 @@ public class Enemy : MonoBehaviour
         target = player.transform == target ? null : target;
 
         running = target != null;
-        //animator.SetBool("Running", running);
+        animator.SetBool("Running", running);
     }
 
     public void AttackPlayer()
     {
-        //animator.SetTrigger("Attack");
+        animator.SetTrigger("Attack");
     }
 }

@@ -35,7 +35,7 @@ public class PlayerHealth : Health
 
         healthBar.value = currentHealth / totalHealth;
 
-        //animator.SetTrigger("Hit");
+        animator.SetTrigger("Hit");
 
         if (currentHealth <= 0)
         {
@@ -56,7 +56,7 @@ public class PlayerHealth : Health
 
         Debug.Log("Game Over");
 
-        //animator.SetTrigger("Death");
+       animator.SetTrigger("Death");
 
         foreach (Component component in GetComponentsInChildren<Component>())
         {

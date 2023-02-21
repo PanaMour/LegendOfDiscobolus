@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HitMask
+  m_Mask: 00000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Root
+    m_Weight: 1
+  - m_Path: Root/Hips
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L/Shoulder_L
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L/Shoulder_L/Elbow_L
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L/Shoulder_L/Elbow_L/Hand_L
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Finger_01
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Finger_01/Finger_02
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Finger_01/Finger_02/Finger_03
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Finger_01/Finger_02/Finger_03/Finger_04
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/IndexFinger_01
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/IndexFinger_01/IndexFinger_02
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/IndexFinger_01/IndexFinger_02/IndexFinger_03
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/IndexFinger_01/IndexFinger_02/IndexFinger_03/IndexFinger_04
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Thumb_01
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Thumb_01/Thumb_02
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Thumb_01/Thumb_02/Thumb_03
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R/Shoulder_R
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R/Shoulder_R/Elbow_R
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R/Shoulder_R/Elbow_R/Hand_R
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Finger_01
+      1
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Finger_01
+      1/Finger_02 1
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Finger_01
+      1/Finger_02 1/Finger_03 1
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Finger_01
+      1/Finger_02 1/Finger_03 1/Finger_04 1
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/IndexFinger_01
+      1
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/IndexFinger_01
+      1/IndexFinger_02 1
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/IndexFinger_01
+      1/IndexFinger_02 1/IndexFinger_03 1
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/IndexFinger_01
+      1/IndexFinger_02 1/IndexFinger_03 1/IndexFinger_04 1
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Thumb_01
+      1
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Thumb_01
+      1/Thumb_02 1
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Thumb_01
+      1/Thumb_02 1/Thumb_03 1
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Neck
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Neck/Head
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Neck/Head/Eyebrows
+    m_Weight: 1
+  - m_Path: Root/Hips/Spine_01/Spine_02/Spine_03/Neck/Head/Eyes
+    m_Weight: 1
+  - m_Path: Root/Hips/UpperLeg_L
+    m_Weight: 1
+  - m_Path: Root/Hips/UpperLeg_L/LowerLeg_L
+    m_Weight: 1
+  - m_Path: Root/Hips/UpperLeg_L/LowerLeg_L/Ankle_L
+    m_Weight: 1
+  - m_Path: Root/Hips/UpperLeg_L/LowerLeg_L/Ankle_L/Ball_L
+    m_Weight: 1
+  - m_Path: Root/Hips/UpperLeg_L/LowerLeg_L/Ankle_L/Ball_L/Toes_L
+    m_Weight: 1
+  - m_Path: Root/Hips/UpperLeg_R
+    m_Weight: 1
+  - m_Path: Root/Hips/UpperLeg_R/LowerLeg_R
+    m_Weight: 1
+  - m_Path: Root/Hips/UpperLeg_R/LowerLeg_R/Ankle_R
+    m_Weight: 1
+  - m_Path: Root/Hips/UpperLeg_R/LowerLeg_R/Ankle_R/Ball_R
+    m_Weight: 1
+  - m_Path: Root/Hips/UpperLeg_R/LowerLeg_R/Ankle_R/Ball_R/Toes_R
+    m_Weight: 1
+  - m_Path: SM_Chr_Alien_01
+    m_Weight: 1
+  - m_Path: SM_Chr_Attach_SpaceSoldier_Armour_01
+    m_Weight: 1
+  - m_Path: SM_Chr_Attach_SpaceSoldier_Female_Helmet_01
+    m_Weight: 1
+  - m_Path: SM_Chr_Attach_SpaceSoldier_Male_Helmet_01
+    m_Weight: 1
+  - m_Path: SM_Chr_Crew_Female_01
+    m_Weight: 1
+  - m_Path: SM_Chr_Crew_Male_01
+    m_Weight: 1
+  - m_Path: SM_Chr_CrewCaptain_Female_01
+    m_Weight: 1
+  - m_Path: SM_Chr_CrewCaptain_Male_01
+    m_Weight: 1
+  - m_Path: SM_Chr_Cryo_Female_01
+    m_Weight: 1
+  - m_Path: SM_Chr_Cryo_Male_01
+    m_Weight: 1
+  - m_Path: SM_Chr_Hunter_Female_01
+    m_Weight: 1
+  - m_Path: SM_Chr_Junker_Female_01
+    m_Weight: 1
+  - m_Path: SM_Chr_Junker_Male_01
+    m_Weight: 1
+  - m_Path: SM_Chr_Medic_Male_01
+    m_Weight: 1
+  - m_Path: SM_Chr_Psionic_01
+    m_Weight: 1
+  - m_Path: SM_Chr_RobotFemale_01
+    m_Weight: 1
+  - m_Path: SM_Chr_SpaceSoldier_Female_01
+    m_Weight: 1
+  - m_Path: SM_Chr_SpaceSoldier_Head_Female_01
+    m_Weight: 1
+  - m_Path: SM_Chr_SpaceSoldier_Head_Male_01
+    m_Weight: 1
+  - m_Path: SM_Chr_SpaceSoldier_Male_01
+    m_Weight: 1
