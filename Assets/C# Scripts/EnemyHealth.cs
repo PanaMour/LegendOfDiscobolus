@@ -42,16 +42,16 @@ public class EnemyHealth : Health
     {
         base.Die();
 
-        myParentSpawner.NotifyDeath(this);
+        //myParentSpawner.NotifyDeath(this);
+        animator.SetTrigger("Dead");
+        animator.SetBool("Death",true);
 
-        animator.SetTrigger("Death");
-
-        DropLoot();
+        //DropLoot();
 
         //remove logic
         enabled = false; //enemyhealth
         GetComponentInParent<Enemy>().enabled = false;
-        GetComponentInParent<UnityEngine.AI.NavMeshAgent>().destination = transform.position;
+        //GetComponentInParent<UnityEngine.AI.NavMeshAgent>().destination = transform.position;
         GetComponentInParent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 
         foreach (Collider collider in GetComponentsInChildren<Collider>())
@@ -60,6 +60,7 @@ public class EnemyHealth : Health
         }
 
         Destroy(GetComponentInChildren<Canvas>().gameObject);
+        
         //Destroy(gameObject);
     }
 

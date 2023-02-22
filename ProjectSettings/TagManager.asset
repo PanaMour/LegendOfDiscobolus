@@ -9,6 +9,7 @@ TagManager:
   - lb_perchTarget
   - Interactable
   - NPC
+  - Enemy
   layers:
   - Default
   - TransparentFX
