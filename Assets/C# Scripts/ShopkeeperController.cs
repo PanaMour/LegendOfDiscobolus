@@ -16,6 +16,8 @@ public class ShopkeeperController : MonoBehaviour
     public GameObject battleaxe;
     public GameObject wallaxe;
     private Camera mainCamera;
+    public GameObject blocker;
+    public GameObject inviswall;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,8 @@ public class ShopkeeperController : MonoBehaviour
                     if (hit.collider.gameObject == oldman)
                     {
                         battleaxe.SetActive(true);
+                        blocker.GetComponent<NPCInteraction>().dialogue2= true;
+                        inviswall.SetActive(false);
                         wallaxe.SetActive(false);
                         playerTransform.GetComponent<PlayerInventory>().NumberOfTomatoes = playerTransform.GetComponent<PlayerInventory>().NumberOfTomatoes - 6;
                         playerTransform.GetComponent<PlayerInventory>().TomatoCollected();

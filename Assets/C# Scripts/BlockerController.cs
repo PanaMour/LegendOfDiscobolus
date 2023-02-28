@@ -33,7 +33,10 @@ public class BlockerController : MonoBehaviour
         else
         {
             transform.LookAt(new Vector3(playerTransform.position.x, this.gameObject.transform.position.y, playerTransform.position.z));
-            animator.Play("Disapprove");
+            if (this.gameObject.GetComponent<NPCInteraction>().dialogue2)
+                animator.Play("Approve");
+            else
+                animator.Play("Disapprove");
         }
     }
 }
