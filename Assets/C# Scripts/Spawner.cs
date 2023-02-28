@@ -27,10 +27,10 @@ public class Spawner : MonoBehaviour
         activeEnemies++;
         totalEnemiesSpawned++;
 
-        GameObject clone = Instantiate(enemyPrefab);
+        GameObject clone = Instantiate(enemyPrefab, RandomSpawnPosition(), new Quaternion(-90,0,0,0));
 
         //POSITION
-        clone.transform.position = RandomSpawnPosition();
+        //clone.transform.position = RandomSpawnPosition();
 
         EnemyHealth enemyHealth = clone.GetComponent<EnemyHealth>();
         if (enemyHealth != null)
@@ -48,7 +48,7 @@ public class Spawner : MonoBehaviour
     {
         activeEnemies--;
 
-        if (totalEnemiesSpawned <= enemiesToSpawn)
+        if (totalEnemiesSpawned < enemiesToSpawn)
         {
             SpawnEnemy();
         }
@@ -60,9 +60,9 @@ public class Spawner : MonoBehaviour
 
     Vector3 RandomSpawnPosition()
     {
-        float x = Random.Range(transform.position.x - originRandomOffset, transform.position.x + originRandomOffset);
-        float z = Random.Range(transform.position.z - originRandomOffset, transform.position.z + originRandomOffset);
-
-        return new Vector3(x, transform.position.y, z);
+        /*float x = Random.Range(transform.position.x - originRandomOffset, transform.position.x + originRandomOffset);
+        float z = Random.Range(transform.position.z - originRandomOffset, transform.position.z + originRandomOffset);*/
+        Debug.Log(new Vector3(transform.position.x, transform.position.y, transform.position.z));
+        return new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 }

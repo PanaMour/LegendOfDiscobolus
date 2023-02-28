@@ -42,7 +42,7 @@ public class EnemyHealth : Health
     {
         base.Die();
 
-        //myParentSpawner.NotifyDeath(this);
+        myParentSpawner.NotifyDeath(this);
         animator.SetTrigger("Dead");
         animator.SetBool("Death",true);
 
@@ -60,8 +60,8 @@ public class EnemyHealth : Health
         }
 
         Destroy(GetComponentInChildren<Canvas>().gameObject);
-        
-        //Destroy(gameObject);
+
+        StartCoroutine(Despawn());
     }
 
     void DropLoot()
@@ -78,5 +78,11 @@ public class EnemyHealth : Health
 
             clone.GetComponent<Rigidbody>().AddExplosionForce(lootExplotionForce, randomExplosionPos, lootExplotionForce, 0f, ForceMode.Impulse);
         }
+    }
+
+    IEnumerator Despawn()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
 }
