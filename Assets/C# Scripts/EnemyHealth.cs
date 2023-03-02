@@ -9,13 +9,15 @@ public class EnemyHealth : Health
     public Slider healthBar;
     public Animator animator;
     public GameObject[] loots;
+    public GameObject dragonCanvas;
     public float lootExplotionForce = 4f;
 
     protected override void Start()
     {
         base.Start();
-
+        dragonCanvas = GameObject.Find("DragonCanvas");
         UpdateUI();
+        
     }
 
     public override void TakeDamage(float damage)
@@ -59,7 +61,10 @@ public class EnemyHealth : Health
             Destroy(collider);
         }
 
-        Destroy(GetComponentInChildren<Canvas>().gameObject);
+        if (gameObject.transform.Find("SkeletonWarrior"))
+            Destroy(GetComponentInChildren<Canvas>().gameObject);
+        else
+            dragonCanvas.SetActive(false);
 
         StartCoroutine(Despawn());
     }
