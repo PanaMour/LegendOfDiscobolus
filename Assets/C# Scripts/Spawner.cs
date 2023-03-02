@@ -26,11 +26,7 @@ public class Spawner : MonoBehaviour
     {
         activeEnemies++;
         totalEnemiesSpawned++;
-
-        GameObject clone = Instantiate(enemyPrefab, RandomSpawnPosition(), new Quaternion(-90,0,0,0));
-
-        //POSITION
-        //clone.transform.position = RandomSpawnPosition();
+        GameObject clone = Instantiate(enemyPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(0,90,0));
 
         EnemyHealth enemyHealth = clone.GetComponent<EnemyHealth>();
         if (enemyHealth != null)
@@ -56,13 +52,5 @@ public class Spawner : MonoBehaviour
         {
             onSpawnerEnd.Invoke();
         }
-    }
-
-    Vector3 RandomSpawnPosition()
-    {
-        /*float x = Random.Range(transform.position.x - originRandomOffset, transform.position.x + originRandomOffset);
-        float z = Random.Range(transform.position.z - originRandomOffset, transform.position.z + originRandomOffset);*/
-        Debug.Log(new Vector3(transform.position.x, transform.position.y, transform.position.z));
-        return new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 }

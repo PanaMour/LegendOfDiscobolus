@@ -82,7 +82,7 @@ public class EnemyHealth : Health
 
     IEnumerator Despawn()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         Destroy(gameObject);
     }
 }
