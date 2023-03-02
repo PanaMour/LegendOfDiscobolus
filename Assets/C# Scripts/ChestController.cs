@@ -11,6 +11,7 @@ public class ChestController : MonoBehaviour
     private Rigidbody rigidbody;
     private Camera mainCamera;
     public GameObject chest;
+    public GameObject scroll;
     public GameObject player;
     private bool isOpen = false;
     public string dialogueText = "";
@@ -42,8 +43,9 @@ public class ChestController : MonoBehaviour
             {
                 if (hit.collider.gameObject == chest)
                 {
-                    animator.Play("Animated PBR Chest _Idle");
+                    animator.Play("Animated PBR Chest _Idle");                    
                     isOpen = true;
+                    StartCoroutine(ScrollWait());
                 }
             }
         }
@@ -95,5 +97,11 @@ public class ChestController : MonoBehaviour
         yield return new WaitForSeconds(timeofDialogue);
         showDialogue = false;
         isStopping = true;
+    }
+
+    IEnumerator ScrollWait()
+    {
+        yield return new WaitForSeconds(3);
+        scroll.SetActive(true);
     }
 }

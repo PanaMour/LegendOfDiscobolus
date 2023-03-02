@@ -45,6 +45,11 @@ public class PlayerInventory : MonoBehaviour
         OnKeyCollected.Invoke(this);
         StartCoroutine(InvisibleCanvas());
     }
+    public void ScrollCollected()
+    {
+        Debug.Log("Scene Changed");
+        //Scene Change
+    }
     public void Update()
     {
         if (invisible)
