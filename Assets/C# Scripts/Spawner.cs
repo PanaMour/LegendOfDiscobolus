@@ -26,7 +26,13 @@ public class Spawner : MonoBehaviour
     {
         activeEnemies++;
         totalEnemiesSpawned++;
-        GameObject clone = Instantiate(enemyPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(0,90,0));
+        GameObject clone;
+        if(enemyPrefab.gameObject.name=="SkeletonEnemy")
+            clone = Instantiate(enemyPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(0,0,0));
+        else
+            clone = Instantiate(enemyPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(0, 90, 0));
+        //GameObject clone = Instantiate(enemyPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(0,90,0));
+
 
         EnemyHealth enemyHealth = clone.GetComponent<EnemyHealth>();
         if (enemyHealth != null)
