@@ -76,7 +76,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8103740087735947912
 RectTransform:
   m_ObjectHideFlags: 0
@@ -344,7 +344,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -475,7 +475,7 @@ BoxCollider:
   m_GameObject: {fileID: 8103740088264208480}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.6811435, y: 2.526947, z: 6.52835}
   m_Center: {x: -0.015656738, y: 0.7634735, z: -0.13782144}
@@ -490,8 +490,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 13.431987}
-  m_Center: {x: 0.0000032782839, y: 2, z: -0.020224571}
+  m_Size: {x: 1, y: 2.954239, z: 13.431987}
+  m_Center: {x: 0.0000032782555, y: 1.5864334, z: -0.020224571}
 --- !u!195 &8103740088264208484
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -529,7 +529,7 @@ MonoBehaviour:
   currentHealth: 100
   totalHealth: 100
   alive: 1
-  healthBar: {fileID: 8103740087967930959}
+  healthBar: {fileID: 0}
   animator: {fileID: 8103740088709603602}
   loots: []
   lootExplotionForce: 0
@@ -1091,8 +1091,8 @@ RectTransform:
   m_Father: {fileID: 8103740088486199397}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

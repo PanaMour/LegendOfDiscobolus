@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Spawner : MonoBehaviour
     public float totalEnemiesSpawned;
     public float enemiesAtOnce = 2;
     public float originRandomOffset = 2;
+    public GameObject dragoncanvas;
     public UnityEvent onSpawnerEnd;
 
     // Start is called before the first frame update
@@ -30,8 +32,11 @@ public class Spawner : MonoBehaviour
         if(enemyPrefab.gameObject.name=="SkeletonEnemy")
             clone = Instantiate(enemyPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(0,0,0));
         else
+        {
             clone = Instantiate(enemyPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(0, 90, 0));
-        //GameObject clone = Instantiate(enemyPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(0,90,0));
+            dragoncanvas.SetActive(true);
+            clone.gameObject.GetComponent<EnemyHealth>().healthBar = dragoncanvas.gameObject.transform.Find("Health").gameObject.GetComponent<Slider>();
+        }
 
 
         EnemyHealth enemyHealth = clone.GetComponent<EnemyHealth>();
