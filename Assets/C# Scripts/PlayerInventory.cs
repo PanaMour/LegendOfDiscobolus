@@ -8,12 +8,16 @@ public class PlayerInventory : MonoBehaviour
 {
     public int NumberOfTomatoes;
     public int NumberOfDiscus;
+    public int NumberOfKeys;
     public UnityEvent<PlayerInventory> OnTomatoCollected;
     public UnityEvent<PlayerInventory> OnDiscusCollected;
+    public UnityEvent<PlayerInventory> OnKeyCollected;
     public Canvas canvas;
     public Canvas discusCanvas;
+    public Canvas keyCanvas;
     private bool invisible = true;
     private bool invisibleDiscus = true;
+    private bool invisibleKey = true;
     public GameObject oldman;
 
     public void TomatoCollected()
@@ -32,6 +36,13 @@ public class PlayerInventory : MonoBehaviour
         invisibleDiscus = false;
         NumberOfDiscus++;
         OnDiscusCollected.Invoke(this);
+        StartCoroutine(InvisibleCanvas());
+    }
+    public void KeyCollected()
+    {
+        invisibleKey = false;
+        NumberOfKeys++;
+        OnKeyCollected.Invoke(this);
         StartCoroutine(InvisibleCanvas());
     }
     public void Update()
@@ -53,6 +64,15 @@ public class PlayerInventory : MonoBehaviour
         {
             discusCanvas.gameObject.SetActive(true);
         }
+
+        if (invisibleKey)
+        {
+            keyCanvas.gameObject.SetActive(false);
+        }
+        else
+        {
+            keyCanvas.gameObject.SetActive(true);
+        }
     }
 
     IEnumerator InvisibleCanvas()
@@ -60,5 +80,6 @@ public class PlayerInventory : MonoBehaviour
         yield return new WaitForSeconds(10);
         invisible= true;
         invisibleDiscus = true;
+        invisibleKey= true;
     }
 }
