@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private TMP_FontAsset OldGlow;
     [SerializeField] private TMP_FontAsset OldNoGlow;
+    [SerializeField] private GameObject panel;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,7 @@ public class MainMenu : MonoBehaviour
 
     public void Controls()
     {
-        Debug.Log("CONTROLS");
+        panel.SetActive(true);
     }
 
     public void Exit()
@@ -37,13 +39,11 @@ public class MainMenu : MonoBehaviour
 
     public void OnPointerEnter()
     {
-        Debug.Log(this.transform.Find("Text").GetComponent<TextMeshProUGUI>().font);
         this.transform.Find("Text").GetComponent<TextMeshProUGUI>().font = OldGlow;
     }
 
     public void OnPointerExit()
     {
-        Debug.Log(this.transform.Find("Text").GetComponent<TextMeshProUGUI>().font + "EXIT");
         this.transform.Find("Text").GetComponent<TextMeshProUGUI>().font = OldNoGlow;
     }
 }
