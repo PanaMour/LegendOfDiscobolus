@@ -21,7 +21,7 @@ public class FinalScene : MonoBehaviour
     }
     public void MainMenu()
     {
-        SceneManager.LoadScene("FinalScene");
+        SceneManager.LoadScene("MainMenu");
     }
     public void Exit()
     {
