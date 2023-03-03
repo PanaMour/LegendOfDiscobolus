@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class PlayerInventory : MonoBehaviour
     }
     public void ScrollCollected()
     {
+        SceneManager.LoadScene("FinalScene");
         Debug.Log("Scene Changed");
         //Scene Change
     }
