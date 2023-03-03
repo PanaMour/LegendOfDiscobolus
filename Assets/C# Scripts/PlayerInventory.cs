@@ -49,8 +49,6 @@ public class PlayerInventory : MonoBehaviour
     public void ScrollCollected()
     {
         SceneManager.LoadScene("FinalScene");
-        Debug.Log("Scene Changed");
-        //Scene Change
     }
     public void Update()
     {
