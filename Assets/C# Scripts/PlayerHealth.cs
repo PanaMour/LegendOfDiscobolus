@@ -62,6 +62,7 @@ public class PlayerHealth : Health
             if (component.GetType() != typeof(SkinnedMeshRenderer)
                 && component.GetType() != typeof(Transform)
                 && component.GetType() != typeof(Animator)
+                && component.GetType() != typeof(ActivateGameOverScreen)
                )
             {
                 Debug.Log(component.ToString());
