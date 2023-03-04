@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
+    [SerializeField] private GameObject battleMusic;
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
         mainCamera.GetComponent<CursorVisible>().enabled= true;
         Time.timeScale = 0f;
+        battleMusic.SetActive(false);
     }
 
     // Update is called once per frame
