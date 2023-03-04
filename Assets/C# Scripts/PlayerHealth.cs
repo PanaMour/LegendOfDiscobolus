@@ -10,7 +10,6 @@ public class PlayerHealth : Health
     [Space]
     [SerializeField] bool immune;
     [SerializeField] Slider healthBar;
-    [SerializeField] GameObject gameOverScreen;
     [SerializeField] Animator animator;
 
     protected override void Start()
@@ -74,8 +73,6 @@ public class PlayerHealth : Health
         {
             enemy.LostPlayer(gameObject);
         }
-        GameObject.FindObjectsOfType<Enemy>();
-
-        //gameOverScreen.SetActive(true);
+        GameObject.FindObjectsOfType<Enemy>();        
     }
 }
