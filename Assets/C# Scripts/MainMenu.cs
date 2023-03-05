@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private TMP_FontAsset OldGlow;
     [SerializeField] private TMP_FontAsset OldNoGlow;
     [SerializeField] private GameObject panel;
+    [SerializeField] private GameObject exit
+        ;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,17 @@ public class MainMenu : MonoBehaviour
 
     public void Exit()
     {
+        exit.SetActive(true);
+    }
+
+    public void Yes()
+    {
         Application.Quit();
+    }
+
+    public void No()
+    {
+        exit.SetActive(false);
     }
 
     public void OnPointerEnter()

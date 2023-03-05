@@ -7,6 +7,7 @@ public class GameOver : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject battleMusic;
+    [SerializeField] private GameObject exit;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,16 @@ public class GameOver : MonoBehaviour
     }
     public void Exit()
     {
+        exit.SetActive(true);
+    }
+
+    public void Yes()
+    {
         Application.Quit();
+    }
+
+    public void No()
+    {
+        exit.SetActive(false);
     }
 }

@@ -9,6 +9,7 @@ using UnityEngine.Video;
 public class FinalScene : MonoBehaviour
 {
     [SerializeField] private GameObject mainmenu;
+    [SerializeField] private GameObject exitButton;
     [SerializeField] private GameObject exit;
     [SerializeField] private VideoPlayer player;
     [SerializeField] private AudioSource unfold;
@@ -28,13 +29,23 @@ public class FinalScene : MonoBehaviour
     }
     public void Exit()
     {
+        exit.SetActive(true);
+    }
+
+    public void Yes()
+    {
         Application.Quit();
+    }
+
+    public void No()
+    {
+        exit.SetActive(false);
     }
     IEnumerator ButtonAppear()
     {
         yield return new WaitForSeconds(12);
         mainmenu.SetActive(true);
-        exit.SetActive(true);
+        exitButton.SetActive(true);
     }
     IEnumerator Unfold()
     {
