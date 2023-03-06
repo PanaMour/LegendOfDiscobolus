@@ -18,6 +18,7 @@ public class NPCInteraction : MonoBehaviour
     public int timeofDialogue = 5;
     public bool dialogue2 = false;
     public bool dialogue3 = false;
+    public AudioSource audioSound;
 
     void Start()
     {
@@ -58,6 +59,7 @@ public class NPCInteraction : MonoBehaviour
                 if (hit.collider.gameObject == npc)
                 {
                     showDialogue = true;
+                    
                     if (dialogueOptions != null && dialogueOptions.Count != 0)
                     {
                         if (dialogue3)
@@ -88,6 +90,10 @@ public class NPCInteraction : MonoBehaviour
 
     IEnumerator StopShowing()
     {
+        if (audioSound != null)
+        {
+            audioSound.Play();
+        }
         yield return new WaitForSeconds(timeofDialogue);
         showDialogue = false;
         isStopping = true;

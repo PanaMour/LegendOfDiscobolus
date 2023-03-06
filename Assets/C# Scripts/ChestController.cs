@@ -22,6 +22,7 @@ public class ChestController : MonoBehaviour
     public float height = 50;
     public bool isStopping = true;
     public int timeofDialogue = 5;
+    public AudioSource audioSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +44,7 @@ public class ChestController : MonoBehaviour
             {
                 if (hit.collider.gameObject == chest)
                 {
+                    audioSound.Play();
                     animator.Play("Animated PBR Chest _Idle");                    
                     isOpen = true;
                     StartCoroutine(ScrollWait());
