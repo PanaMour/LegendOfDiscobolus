@@ -23,6 +23,7 @@ public class ChestController : MonoBehaviour
     public bool isStopping = true;
     public int timeofDialogue = 5;
     public AudioSource audioSound;
+    public GameObject pauseCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,7 +76,7 @@ public class ChestController : MonoBehaviour
     }
     private void OnGUI()
     {
-        if (showDialogue)
+        if (showDialogue && !pauseCanvas.activeSelf)
         {
             x = 25;
             height = 70;

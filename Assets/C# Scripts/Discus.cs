@@ -8,6 +8,7 @@ public class Discus : MonoBehaviour
     [SerializeField] private GameObject gate;
     [SerializeField] private GameObject blocker1;
     [SerializeField] private GameObject blocker2;
+    [SerializeField] private AudioSource pickup;
     private void OnTriggerEnter(Collider other)
     {
         PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
@@ -19,6 +20,7 @@ public class Discus : MonoBehaviour
             gate.SetActive(false);
             blocker1.GetComponent<NPCInteraction>().dialogue3 = true;
             blocker2.GetComponent<NPCInteraction>().dialogue2 = true;
+            pickup.Play();
         }
     }
 }

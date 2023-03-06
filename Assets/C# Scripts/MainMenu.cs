@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject fakebg;
     [SerializeField] private GameObject exit;
+    [SerializeField] private GameObject difficulty;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +27,39 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
+        difficulty.SetActive(true);
+        fakebg.SetActive(true);
+    }
+    
+    public void Easy()
+    {
+        difficulty.SetActive(false);
+        fakebg.SetActive(false);
         SceneManager.LoadScene("SampleScene");
     }
-
+    public void Medium()
+    {
+        difficulty.SetActive(false);
+        fakebg.SetActive(false);
+        SceneManager.LoadScene("SampleScene");        
+    }
+    public void Hard()
+    {
+        difficulty.SetActive(false);
+        fakebg.SetActive(false);
+        SceneManager.LoadScene("SampleScene");        
+    }
+    public void Impossible()
+    {
+        difficulty.SetActive(false);
+        fakebg.SetActive(false);
+        SceneManager.LoadScene("SampleScene");        
+    }
+    public void X()
+    {
+        difficulty.SetActive(false);
+        fakebg.SetActive(false);
+    }
     public void Controls()
     {
         panel.SetActive(true);

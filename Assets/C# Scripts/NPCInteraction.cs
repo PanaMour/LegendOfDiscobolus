@@ -19,6 +19,7 @@ public class NPCInteraction : MonoBehaviour
     public bool dialogue2 = false;
     public bool dialogue3 = false;
     public AudioSource audioSound;
+    public GameObject pauseCanvas;
 
     void Start()
     {
@@ -27,7 +28,7 @@ public class NPCInteraction : MonoBehaviour
     }
     private void OnGUI()
     {
-        if (showDialogue)
+        if (showDialogue && !pauseCanvas.activeSelf)
         {
             x = 25;
             height = 70;

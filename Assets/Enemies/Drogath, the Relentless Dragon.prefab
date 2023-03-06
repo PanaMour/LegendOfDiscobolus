@@ -183,8 +183,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.954239, z: 13.431987}
-  m_Center: {x: 0.0000032782555, y: 1.5864334, z: -0.020224571}
+  m_Size: {x: 1, y: 6.0688477, z: 13.431987}
+  m_Center: {x: 0.0000032782555, y: 3.1437378, z: -0.020224571}
 --- !u!195 &8103740088264208484
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1213,6 +1213,7 @@ MonoBehaviour:
   getHit: {fileID: 6862701479516289171}
   die: {fileID: 4581373267356546309}
   playerAxe: {fileID: 0}
+  playerGetHit: {fileID: 0}
 --- !u!114 &8103740087447999286
 MonoBehaviour:
   m_ObjectHideFlags: 0
