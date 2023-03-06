@@ -10,7 +10,6 @@ public class FinalScene : MonoBehaviour
 {
     [SerializeField] private GameObject mainmenu;
     [SerializeField] private GameObject exitButton;
-    [SerializeField] private GameObject exit;
     [SerializeField] private VideoPlayer player;
     [SerializeField] private AudioSource unfold;
     void Start()
@@ -29,17 +28,7 @@ public class FinalScene : MonoBehaviour
     }
     public void Exit()
     {
-        exit.SetActive(true);
-    }
-
-    public void Yes()
-    {
         Application.Quit();
-    }
-
-    public void No()
-    {
-        exit.SetActive(false);
     }
     IEnumerator ButtonAppear()
     {

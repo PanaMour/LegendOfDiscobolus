@@ -1,6 +1,7 @@
 using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEngine.Rendering.DebugUI;
@@ -14,6 +15,10 @@ public class PauseMenu : MonoBehaviour
     private AudioSource[] audioSources;
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject exit;
+    [SerializeField] private GameObject exitMain;
+    [SerializeField] private TextMeshProUGUI tomatoText;
+    [SerializeField] private TextMeshProUGUI discusText;
+    [SerializeField] private TextMeshProUGUI keyText;
     void Start()
     {
         mainCamera = Camera.main;
@@ -24,6 +29,10 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !panel.activeSelf)
         {
+            Cursor.visible = !isPaused;
+            tomatoText.text = "x" + player.GetComponent<PlayerInventory>().NumberOfTomatoes.ToString();
+            discusText.text = "x" + player.GetComponent<PlayerInventory>().NumberOfDiscus.ToString();
+            keyText.text = "x" + player.GetComponent<PlayerInventory>().NumberOfKeys.ToString();
             audioSources = GameObject.FindObjectsOfType<AudioSource>(true);
             isPaused = !isPaused;
             Time.timeScale = isPaused ? 0 : 1;
@@ -46,6 +55,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        Cursor.visible = false;
         Time.timeScale = 1;
         pauseCanvas.SetActive(false);
         mainCamera.GetComponent<CursorVisible>().enabled = false;
@@ -58,7 +68,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        exitMain.SetActive(true);
     }
 
     public void Controls()
@@ -79,5 +89,14 @@ public class PauseMenu : MonoBehaviour
     public void No()
     {
         exit.SetActive(false);
+    }
+    public void YesMain()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void NoMain()
+    {
+        exitMain.SetActive(false);
     }
 }
