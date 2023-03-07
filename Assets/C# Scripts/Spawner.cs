@@ -11,9 +11,11 @@ public class Spawner : MonoBehaviour
     public float activeEnemies = 0;
     public float totalEnemiesSpawned;
     public float enemiesAtOnce = 2;
-    public float originRandomOffset = 2;
     public GameObject dragoncanvas;
     public UnityEvent onSpawnerEnd;
+    public GameObject skeleton;
+    public GameObject playerDamage;
+    public GameObject dragon;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,82 @@ public class Spawner : MonoBehaviour
 
     void SpawnEnemy()
     {
+        if(this.gameObject.name == "Spawner")
+        {
+            switch(GameManager.instance.currentDifficulty)
+            {
+                case GameManager.DifficultyLevel.Easy:
+                    enemiesToSpawn = 3;
+                    enemiesAtOnce = 1;
+                    skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 5;
+                    skeleton.transform.Find("DamageDealer").gameObject.SetActive(false);
+                    playerDamage.GetComponent<DamageTriggerPlayer>().damage = 20;
+                    break;
+                case GameManager.DifficultyLevel.Medium:
+                    enemiesToSpawn = 4;
+                    enemiesAtOnce = 2;
+                    skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 5;
+                    skeleton.transform.Find("DamageDealer").gameObject.SetActive(false);
+                    playerDamage.GetComponent<DamageTriggerPlayer>().damage = 20;
+                    break;
+                case GameManager.DifficultyLevel.Hard:
+                    enemiesToSpawn = 10;
+                    enemiesAtOnce = 3;
+                    skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 5;
+                    skeleton.transform.Find("DamageDealer").gameObject.SetActive(false);
+                    playerDamage.GetComponent<DamageTriggerPlayer>().damage = 10;
+                    break;
+                case GameManager.DifficultyLevel.Impossible:
+                    enemiesToSpawn = 20;
+                    enemiesAtOnce = 5;
+                    skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 50;
+                    skeleton.transform.Find("DamageDealer").gameObject.SetActive(false);
+                    playerDamage.GetComponent<DamageTriggerPlayer>().damage = 10;
+                    break;
+            }
+        }
+        else if(this.gameObject.name == "DragonSpawner")
+        {
+            switch (GameManager.instance.currentDifficulty)
+            {
+                case GameManager.DifficultyLevel.Easy:
+                    enemiesToSpawn = 1;
+                    enemiesAtOnce = 1;
+                    dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 5;
+                    dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealerBody").GetComponent<DamageTrigger>().damage = 5;
+                    dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealerNeck").GetComponent<DamageTrigger>().damage = 5;
+                    dragon.transform.Find("DamageDealerAll").gameObject.SetActive(false);
+                    playerDamage.GetComponent<DamageTriggerPlayer>().damage = 20;
+                    break;
+                case GameManager.DifficultyLevel.Medium:
+                    enemiesToSpawn = 1;
+                    enemiesAtOnce = 1;
+                    dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 10;
+                    dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealerBody").GetComponent<DamageTrigger>().damage = 5;
+                    dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealerNeck").GetComponent<DamageTrigger>().damage = 5;
+                    dragon.transform.Find("DamageDealerAll").gameObject.SetActive(false);
+                    playerDamage.GetComponent<DamageTriggerPlayer>().damage = 10;
+                    break;
+                case GameManager.DifficultyLevel.Hard:
+                    enemiesToSpawn = 1;
+                    enemiesAtOnce = 1;
+                    dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 20;
+                    dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealerBody").GetComponent<DamageTrigger>().damage = 10;
+                    dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealerNeck").GetComponent<DamageTrigger>().damage = 10;
+                    dragon.transform.Find("DamageDealerAll").gameObject.SetActive(false);
+                    playerDamage.GetComponent<DamageTriggerPlayer>().damage = 10;
+                    break;
+                case GameManager.DifficultyLevel.Impossible:
+                    enemiesToSpawn = 2;
+                    enemiesAtOnce = 1;
+                    dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 50;
+                    dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealerBody").GetComponent<DamageTrigger>().damage = 15;
+                    dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealerNeck").GetComponent<DamageTrigger>().damage = 15;
+                    dragon.transform.Find("DamageDealerAll").gameObject.SetActive(false);
+                    playerDamage.GetComponent<DamageTriggerPlayer>().damage = 5;
+                    break;
+            }
+        }
         activeEnemies++;
         totalEnemiesSpawned++;
         GameObject clone;
@@ -47,7 +125,7 @@ public class Spawner : MonoBehaviour
 
         if (activeEnemies < enemiesAtOnce)
         {
-            SpawnEnemy();
+            StartCoroutine(Wait2Sec());
         }
     }
 
@@ -59,9 +137,15 @@ public class Spawner : MonoBehaviour
         {
             SpawnEnemy();
         }
-        else
+        else if(activeEnemies== 0)
         {
             onSpawnerEnd.Invoke();
         }
+    }
+
+    IEnumerator Wait2Sec()
+    {
+        yield return new WaitForSeconds(2);
+        SpawnEnemy();
     }
 }

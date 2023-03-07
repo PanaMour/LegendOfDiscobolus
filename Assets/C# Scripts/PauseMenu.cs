@@ -22,6 +22,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame

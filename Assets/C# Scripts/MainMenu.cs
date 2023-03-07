@@ -35,24 +35,28 @@ public class MainMenu : MonoBehaviour
     {
         difficulty.SetActive(false);
         fakebg.SetActive(false);
+        GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Easy;
         SceneManager.LoadScene("SampleScene");
     }
     public void Medium()
     {
         difficulty.SetActive(false);
         fakebg.SetActive(false);
+        GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Medium;
         SceneManager.LoadScene("SampleScene");        
     }
     public void Hard()
     {
         difficulty.SetActive(false);
         fakebg.SetActive(false);
+        GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Hard;
         SceneManager.LoadScene("SampleScene");        
     }
     public void Impossible()
     {
         difficulty.SetActive(false);
         fakebg.SetActive(false);
+        GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Impossible;
         SceneManager.LoadScene("SampleScene");        
     }
     public void X()
