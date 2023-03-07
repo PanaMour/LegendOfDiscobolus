@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject fakebg;
     [SerializeField] private GameObject exit;
     [SerializeField] private GameObject difficulty;
+    [SerializeField] private GameObject loading;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,31 +34,27 @@ public class MainMenu : MonoBehaviour
     
     public void Easy()
     {
-        difficulty.SetActive(false);
-        fakebg.SetActive(false);
+        loading.SetActive(true);
         GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Easy;
-        SceneManager.LoadScene("SampleScene");
+        StartCoroutine(SceneChange());
     }
     public void Medium()
     {
-        difficulty.SetActive(false);
-        fakebg.SetActive(false);
+        loading.SetActive(true);
         GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Medium;
-        SceneManager.LoadScene("SampleScene");        
+        StartCoroutine(SceneChange());
     }
     public void Hard()
     {
-        difficulty.SetActive(false);
-        fakebg.SetActive(false);
+        loading.SetActive(true);
         GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Hard;
-        SceneManager.LoadScene("SampleScene");        
+        StartCoroutine(SceneChange());
     }
     public void Impossible()
     {
-        difficulty.SetActive(false);
-        fakebg.SetActive(false);
+        loading.SetActive(true);
         GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Impossible;
-        SceneManager.LoadScene("SampleScene");        
+        StartCoroutine(SceneChange());
     }
     public void X()
     {
@@ -94,5 +91,13 @@ public class MainMenu : MonoBehaviour
     public void OnPointerExit()
     {
         this.transform.Find("Text").GetComponent<TextMeshProUGUI>().font = OldNoGlow;
+    }
+
+    IEnumerator SceneChange()
+    {
+        yield return new WaitForSeconds(1);
+        difficulty.SetActive(false);
+        fakebg.SetActive(false);
+        SceneManager.LoadScene("SampleScene");
     }
 }
