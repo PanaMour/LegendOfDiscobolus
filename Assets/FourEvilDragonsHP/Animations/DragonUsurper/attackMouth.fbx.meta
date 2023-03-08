@@ -795,21 +795,21 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.15177886
-        functionName: ActivateDamageDealer
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.24945769
+      - time: 0.33026576
         functionName: Bite
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.66467065
+      - time: 0.34571826
+        functionName: ActivateDamageDealer
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.608105
         functionName: DeactivateDamageDealer
         data: 
         objectReferenceParameter: {instanceID: 0}

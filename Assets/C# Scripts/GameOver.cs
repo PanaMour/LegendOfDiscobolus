@@ -12,6 +12,7 @@ public class GameOver : MonoBehaviour
     {
         mainCamera = Camera.main;
         mainCamera.GetComponent<CursorVisible>().enabled= true;
+        mainCamera.GetComponent<CursorConfined>().enabled = false;
         Time.timeScale = 0f;
         battleMusic.SetActive(false);
     }
@@ -19,11 +20,12 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Cursor.visible = true;
     }
 
     public void MainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
     public void Exit()

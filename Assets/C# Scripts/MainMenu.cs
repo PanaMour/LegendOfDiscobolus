@@ -36,25 +36,33 @@ public class MainMenu : MonoBehaviour
     {
         loading.SetActive(true);
         GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Easy;
-        StartCoroutine(SceneChange());
+        difficulty.SetActive(false);
+        fakebg.SetActive(false);
+        SceneManager.LoadScene("SampleScene");
     }
     public void Medium()
     {
         loading.SetActive(true);
         GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Medium;
-        StartCoroutine(SceneChange());
+        difficulty.SetActive(false);
+        fakebg.SetActive(false);
+        SceneManager.LoadScene("SampleScene");
     }
     public void Hard()
     {
         loading.SetActive(true);
         GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Hard;
-        StartCoroutine(SceneChange());
+        difficulty.SetActive(false);
+        fakebg.SetActive(false);
+        SceneManager.LoadScene("SampleScene");
     }
     public void Impossible()
     {
         loading.SetActive(true);
         GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Impossible;
-        StartCoroutine(SceneChange());
+        difficulty.SetActive(false);
+        fakebg.SetActive(false);
+        SceneManager.LoadScene("SampleScene");
     }
     public void X()
     {
@@ -91,13 +99,5 @@ public class MainMenu : MonoBehaviour
     public void OnPointerExit()
     {
         this.transform.Find("Text").GetComponent<TextMeshProUGUI>().font = OldNoGlow;
-    }
-
-    IEnumerator SceneChange()
-    {
-        yield return new WaitForSeconds(1);
-        difficulty.SetActive(false);
-        fakebg.SetActive(false);
-        SceneManager.LoadScene("SampleScene");
     }
 }

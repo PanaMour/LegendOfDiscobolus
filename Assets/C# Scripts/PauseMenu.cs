@@ -39,6 +39,7 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = isPaused ? 0 : 1;
             pauseCanvas.SetActive(isPaused);
             mainCamera.GetComponent<CursorVisible>().enabled = isPaused;
+            mainCamera.GetComponent<CursorConfined>().enabled = !isPaused;
             player.GetComponent<ThirdPersonController>().LockCameraPosition = isPaused;
             foreach (AudioSource audioSource in audioSources)
             {
@@ -59,7 +60,9 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = false;
         Time.timeScale = 1;
         pauseCanvas.SetActive(false);
+        isPaused = !isPaused;
         mainCamera.GetComponent<CursorVisible>().enabled = false;
+        mainCamera.GetComponent<CursorConfined>().enabled = true;
         player.GetComponent<ThirdPersonController>().LockCameraPosition = false;
         foreach (AudioSource audioSource in audioSources)
         {
@@ -69,6 +72,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        Time.timeScale = 1;
         exitMain.SetActive(true);
     }
 

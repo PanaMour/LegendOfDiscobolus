@@ -47,16 +47,16 @@ public class Spawner : MonoBehaviour
                     playerDamage.GetComponent<DamageTriggerPlayer>().damage = 20;
                     break;
                 case GameManager.DifficultyLevel.Hard:
-                    enemiesToSpawn = 10;
+                    enemiesToSpawn = 7;
                     enemiesAtOnce = 3;
-                    skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 5;
+                    skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 10;
                     skeleton.transform.Find("DamageDealer").gameObject.SetActive(false);
                     playerDamage.GetComponent<DamageTriggerPlayer>().damage = 10;
                     break;
                 case GameManager.DifficultyLevel.Impossible:
-                    enemiesToSpawn = 20;
+                    enemiesToSpawn = 10;
                     enemiesAtOnce = 5;
-                    skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 50;
+                    skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 25;
                     skeleton.transform.Find("DamageDealer").gameObject.SetActive(false);
                     playerDamage.GetComponent<DamageTriggerPlayer>().damage = 10;
                     break;
@@ -112,6 +112,14 @@ public class Spawner : MonoBehaviour
         else
         {
             clone = Instantiate(enemyPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(0, 90, 0));
+            if(GameManager.instance.currentDifficulty == GameManager.DifficultyLevel.Impossible)
+            {
+                StartCoroutine(Wait2SecDragon());
+            }
+            else
+            {
+                dragoncanvas.SetActive(true);
+            }
             dragoncanvas.SetActive(true);
             clone.gameObject.GetComponent<EnemyHealth>().healthBar = dragoncanvas.gameObject.transform.Find("Health").gameObject.GetComponent<Slider>();
         }
@@ -147,5 +155,11 @@ public class Spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         SpawnEnemy();
+    }
+
+    IEnumerator Wait2SecDragon()
+    {
+        yield return new WaitForSeconds(2);
+        dragoncanvas.SetActive(true);
     }
 }
