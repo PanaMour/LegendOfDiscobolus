@@ -40,7 +40,7 @@ public class Spawner : MonoBehaviour
                     playerDamage.GetComponent<DamageTriggerPlayer>().damage = 20;
                     break;
                 case GameManager.DifficultyLevel.Medium:
-                    enemiesToSpawn = 4;
+                    enemiesToSpawn = 5;
                     enemiesAtOnce = 2;
                     skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 5;
                     skeleton.transform.Find("DamageDealer").gameObject.SetActive(false);
