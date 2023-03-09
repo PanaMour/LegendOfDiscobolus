@@ -11,6 +11,7 @@ public class EnemyHealth : Health
     public GameObject[] loots;
     public GameObject dragonCanvas;
     public float lootExplotionForce = 4f;
+    public bool takingDamage = false;
 
     protected override void Start()
     {
@@ -22,12 +23,14 @@ public class EnemyHealth : Health
 
     public override void TakeDamage(float damage)
     {
-        base.TakeDamage(damage);
-
-        UpdateUI();
-
-        //hit animation
-        animator.SetTrigger("Hit");
+        if(!takingDamage)
+        {
+            takingDamage = true;
+            base.TakeDamage(damage);
+            UpdateUI();
+            animator.SetTrigger("Hit");
+            StartCoroutine(TakingDamage());
+        }
     }
 
     void UpdateUI()
@@ -89,5 +92,11 @@ public class EnemyHealth : Health
     {
         yield return new WaitForSeconds(10);
         Destroy(gameObject);
+    }
+
+    IEnumerator TakingDamage()
+    {
+        yield return new WaitForSeconds(2);
+        takingDamage = false;
     }
 }

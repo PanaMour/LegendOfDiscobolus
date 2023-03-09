@@ -8,6 +8,8 @@ public class TrapArea : MonoBehaviour
     [SerializeField] private GameObject health;
     [SerializeField] private GameObject trigger;
     [SerializeField] private GameObject spawner;
+    [SerializeField] private GameObject medicine;
+    public bool cabbageGiven = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,10 @@ public class TrapArea : MonoBehaviour
             health.SetActive(true);
             spawner.SetActive(true);
             trigger.SetActive(false);
+            if(cabbageGiven)
+            {
+                medicine.SetActive(true);
+            }
         }
     }
 }

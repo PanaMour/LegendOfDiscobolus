@@ -104,7 +104,7 @@ public class PlayerInventory : MonoBehaviour
 
     IEnumerator InvisibleCanvas()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(7);
         invisible= true;
         invisibleDiscus = true;
         invisibleKey= true;

@@ -16,6 +16,7 @@ public class Spawner : MonoBehaviour
     public GameObject skeleton;
     public GameObject playerDamage;
     public GameObject dragon;
+    public GameObject medicine;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class Spawner : MonoBehaviour
                     skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 5;
                     skeleton.transform.Find("DamageDealer").gameObject.SetActive(false);
                     playerDamage.GetComponent<DamageTriggerPlayer>().damage = 20;
+                    medicine.GetComponent<Medicine>().HP = 10;
                     break;
                 case GameManager.DifficultyLevel.Medium:
                     enemiesToSpawn = 5;
@@ -45,6 +47,7 @@ public class Spawner : MonoBehaviour
                     skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 5;
                     skeleton.transform.Find("DamageDealer").gameObject.SetActive(false);
                     playerDamage.GetComponent<DamageTriggerPlayer>().damage = 20;
+                    medicine.GetComponent<Medicine>().HP = 10;
                     break;
                 case GameManager.DifficultyLevel.Hard:
                     enemiesToSpawn = 7;
@@ -52,6 +55,7 @@ public class Spawner : MonoBehaviour
                     skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 10;
                     skeleton.transform.Find("DamageDealer").gameObject.SetActive(false);
                     playerDamage.GetComponent<DamageTriggerPlayer>().damage = 10;
+                    medicine.GetComponent<Medicine>().HP = 10;
                     break;
                 case GameManager.DifficultyLevel.Impossible:
                     enemiesToSpawn = 10;
@@ -59,6 +63,7 @@ public class Spawner : MonoBehaviour
                     skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 25;
                     skeleton.transform.Find("DamageDealer").gameObject.SetActive(false);
                     playerDamage.GetComponent<DamageTriggerPlayer>().damage = 10;
+                    medicine.GetComponent<Medicine>().HP = 25;
                     break;
             }
         }

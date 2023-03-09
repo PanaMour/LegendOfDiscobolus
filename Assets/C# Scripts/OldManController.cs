@@ -14,6 +14,7 @@ public class OldManController : MonoBehaviour
     private Quaternion rotation;
     public GameObject oldman;
     public GameObject cabbage;
+    public GameObject triggerDungeon;
     private Camera mainCamera;
     // Start is called before the first frame update
     void Start()
@@ -52,6 +53,7 @@ public class OldManController : MonoBehaviour
                     {
                         playerTransform.GetComponent<PlayerInventory>().NumberOfCabbages = playerTransform.GetComponent<PlayerInventory>().NumberOfCabbages - 2;
                         playerTransform.GetComponent<PlayerInventory>().CabbageCollected();
+                        triggerDungeon.GetComponent<TrapArea>().cabbageGiven = true;
                     }
                 }
             }

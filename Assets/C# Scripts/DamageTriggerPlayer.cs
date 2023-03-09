@@ -19,7 +19,6 @@ public class DamageTriggerPlayer : MonoBehaviour
             if (foundHealth != null)
             {
                 foundHealth.TakeDamage(damage);
-                damagedealer.SetActive(false);
             }
         }
     }
