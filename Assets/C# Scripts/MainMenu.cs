@@ -38,7 +38,6 @@ public class MainMenu : MonoBehaviour
         GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Easy;
         difficulty.SetActive(false);
         fakebg.SetActive(false);
-        SceneManager.LoadScene("SampleScene");
     }
     public void Medium()
     {
@@ -46,7 +45,6 @@ public class MainMenu : MonoBehaviour
         GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Medium;
         difficulty.SetActive(false);
         fakebg.SetActive(false);
-        SceneManager.LoadScene("SampleScene");
     }
     public void Hard()
     {
@@ -54,7 +52,6 @@ public class MainMenu : MonoBehaviour
         GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Hard;
         difficulty.SetActive(false);
         fakebg.SetActive(false);
-        SceneManager.LoadScene("SampleScene");
     }
     public void Impossible()
     {
@@ -62,7 +59,6 @@ public class MainMenu : MonoBehaviour
         GameManager.instance.currentDifficulty = GameManager.DifficultyLevel.Impossible;
         difficulty.SetActive(false);
         fakebg.SetActive(false);
-        SceneManager.LoadScene("SampleScene");
     }
     public void X()
     {
