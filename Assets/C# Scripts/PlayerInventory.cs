@@ -10,16 +10,21 @@ public class PlayerInventory : MonoBehaviour
     public int NumberOfTomatoes;
     public int NumberOfDiscus;
     public int NumberOfKeys;
+    public int NumberOfCabbages;
     public UnityEvent<PlayerInventory> OnTomatoCollected;
     public UnityEvent<PlayerInventory> OnDiscusCollected;
     public UnityEvent<PlayerInventory> OnKeyCollected;
+    public UnityEvent<PlayerInventory> OnCabbageCollected;
     public Canvas canvas;
     public Canvas discusCanvas;
     public Canvas keyCanvas;
+    public Canvas cabbageCanvas;
     private bool invisible = true;
     private bool invisibleDiscus = true;
     private bool invisibleKey = true;
+    private bool invisibleCabbage = true;
     public GameObject oldman;
+    public GameObject oldman2;
 
     public void TomatoCollected()
     {
@@ -45,6 +50,14 @@ public class PlayerInventory : MonoBehaviour
         NumberOfKeys++;
         OnKeyCollected.Invoke(this);
         StartCoroutine(InvisibleCanvas());
+    }
+    public void CabbageCollected()
+    {
+        invisibleCabbage = false;
+        NumberOfCabbages++;
+        OnCabbageCollected.Invoke(this);
+        StartCoroutine(InvisibleCanvas());
+        oldman2.gameObject.GetComponent<NPCInteraction>().dialogue2 = true;
     }
     public void ScrollCollected()
     {
@@ -78,6 +91,15 @@ public class PlayerInventory : MonoBehaviour
         {
             keyCanvas.gameObject.SetActive(true);
         }
+
+        if (invisibleCabbage)
+        {
+            cabbageCanvas.gameObject.SetActive(false);
+        }
+        else
+        {
+            cabbageCanvas.gameObject.SetActive(true);
+        }
     }
 
     IEnumerator InvisibleCanvas()
@@ -86,5 +108,6 @@ public class PlayerInventory : MonoBehaviour
         invisible= true;
         invisibleDiscus = true;
         invisibleKey= true;
+        invisibleCabbage= true;
     }
 }

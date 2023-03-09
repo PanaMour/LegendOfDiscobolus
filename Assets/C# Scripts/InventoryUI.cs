@@ -8,12 +8,14 @@ public class InventoryUI : MonoBehaviour
     private TextMeshProUGUI tomatoText;
     private TextMeshProUGUI discusText;
     private TextMeshProUGUI keyText;
+    private TextMeshProUGUI cabbageText;
     // Start is called before the first frame update
     void Start()
     {
         tomatoText = GetComponent<TextMeshProUGUI>();
         discusText = GetComponent<TextMeshProUGUI>();
         keyText = GetComponent<TextMeshProUGUI>();
+        cabbageText = GetComponent<TextMeshProUGUI>();
     }
 
     public void UpdateTomatoText(PlayerInventory playerInventory)
@@ -28,5 +30,9 @@ public class InventoryUI : MonoBehaviour
     public void UpdateKeyText(PlayerInventory playerInventory)
     {
         keyText.text = "x" + playerInventory.NumberOfKeys.ToString();
+    }
+    public void UpdateCabbageText(PlayerInventory playerInventory)
+    {
+        cabbageText.text = "x" + playerInventory.NumberOfCabbages.ToString();
     }
 }
