@@ -226,7 +226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &514879638589116709
 Transform:
   m_ObjectHideFlags: 0
@@ -613,6 +613,7 @@ MonoBehaviour:
   loots: []
   dragonCanvas: {fileID: 0}
   lootExplotionForce: 3
+  takingDamage: 0
 --- !u!114 &514879639698891684
 MonoBehaviour:
   m_ObjectHideFlags: 0
