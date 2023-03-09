@@ -5,7 +5,7 @@ using UnityEngine;
 public class DamageTriggerPlayer : MonoBehaviour
 {
     public float damage = 10f;
-
+    public GameObject damagedealer;
     private void OnTriggerEnter(Collider other)
     {
         DealDamage(other.gameObject);
@@ -19,6 +19,7 @@ public class DamageTriggerPlayer : MonoBehaviour
             if (foundHealth != null)
             {
                 foundHealth.TakeDamage(damage);
+                damagedealer.SetActive(false);
             }
         }
     }

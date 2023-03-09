@@ -1589,7 +1589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu: {fileID: 2048163931}
-  exit: {fileID: 491775806}
+  exitButton: {fileID: 491775806}
   player: {fileID: 180668576}
   unfold: {fileID: 1909463706}
 --- !u!1 &1909463705
