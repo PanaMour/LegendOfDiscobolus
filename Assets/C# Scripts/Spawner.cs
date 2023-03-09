@@ -78,7 +78,7 @@ public class Spawner : MonoBehaviour
                 case GameManager.DifficultyLevel.Medium:
                     enemiesToSpawn = 1;
                     enemiesAtOnce = 1;
-                    dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 10;
+                    dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 15;
                     dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealerBody").GetComponent<DamageTrigger>().damage = 5;
                     dragon.transform.Find("DamageDealerAll").transform.Find("DamageDealerNeck").GetComponent<DamageTrigger>().damage = 5;
                     dragon.transform.Find("DamageDealerAll").gameObject.SetActive(false);
