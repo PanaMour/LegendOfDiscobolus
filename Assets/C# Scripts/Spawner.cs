@@ -39,7 +39,7 @@ public class Spawner : MonoBehaviour
                     skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 5;
                     skeleton.transform.Find("DamageDealer").gameObject.SetActive(false);
                     playerDamage.GetComponent<DamageTriggerPlayer>().damage = 20;
-                    medicine.GetComponent<Medicine>().HP = 10;
+                    medicine.GetComponent<Medicine>().HP = 50;
                     break;
                 case GameManager.DifficultyLevel.Medium:
                     enemiesToSpawn = 5;
@@ -47,7 +47,7 @@ public class Spawner : MonoBehaviour
                     skeleton.transform.Find("DamageDealer").GetComponent<DamageTrigger>().damage = 5;
                     skeleton.transform.Find("DamageDealer").gameObject.SetActive(false);
                     playerDamage.GetComponent<DamageTriggerPlayer>().damage = 20;
-                    medicine.GetComponent<Medicine>().HP = 10;
+                    medicine.GetComponent<Medicine>().HP = 20;
                     break;
                 case GameManager.DifficultyLevel.Hard:
                     enemiesToSpawn = 7;
