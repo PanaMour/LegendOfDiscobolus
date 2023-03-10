@@ -16,6 +16,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject exit;
     [SerializeField] private GameObject exitMain;
+    [SerializeField] private GameObject settings;
     [SerializeField] private TextMeshProUGUI tomatoText;
     [SerializeField] private TextMeshProUGUI discusText;
     [SerializeField] private TextMeshProUGUI keyText;
@@ -28,7 +29,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !panel.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) && !panel.activeSelf && !settings.activeSelf && !exitMain.activeSelf && !exit.activeSelf)
         {
             Cursor.visible = !isPaused;
             tomatoText.text = "x" + player.GetComponent<PlayerInventory>().NumberOfTomatoes.ToString();
@@ -103,5 +104,10 @@ public class PauseMenu : MonoBehaviour
     public void NoMain()
     {
         exitMain.SetActive(false);
+    }
+
+    public void Settings()
+    {
+        settings.SetActive(true);
     }
 }

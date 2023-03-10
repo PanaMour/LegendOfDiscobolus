@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject exit;
     [SerializeField] private GameObject difficulty;
     [SerializeField] private GameObject loading;
+    [SerializeField] private GameObject settings;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,7 +76,10 @@ public class MainMenu : MonoBehaviour
         exit.SetActive(true);
         fakebg.SetActive(true);
     }
-
+    public void Settings()
+    {
+        settings.SetActive(true);
+    }
     public void Yes()
     {
         Application.Quit();
