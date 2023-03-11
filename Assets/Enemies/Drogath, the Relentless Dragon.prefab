@@ -227,6 +227,7 @@ MonoBehaviour:
   loots: []
   dragonCanvas: {fileID: 0}
   lootExplotionForce: 0
+  takingDamage: 0
 --- !u!114 &8103740088264208486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,7 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6298fd2cc02445845a379f57a8a64520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 5
 --- !u!1 &8103740089275547479
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8103740089275547476
 Transform:
   m_ObjectHideFlags: 0
